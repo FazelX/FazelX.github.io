@@ -461,9 +461,9 @@
                 aboutParaThree: "I like building new stuff and work as a team, without a team we can't build something interesting.",
                 aboutImage: "https://github.com/FazelX.png",
                 skills: [{img: y.a, para: "Android"}, {img: s.a, para: "Flutter"}, {img: S.a, para: "Java"}, {
-                    img:,
-                    para: ""
-                }, {img: w.a, para: "Dart"}, {img: E.a, para: "Git"}, {img: A.a, para: "Kotlin"}, {
+                    img: w.a,
+                    para: "Dart"
+                }, {img: E.a, para: "Git"}, {img: A.a, para: "Kotlin"}, {
                     img: x.a,
                     para: "Python"
                 }, {img: C.a, para: "Spring Boot"}],

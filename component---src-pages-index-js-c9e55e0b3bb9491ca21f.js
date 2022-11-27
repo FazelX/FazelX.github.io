@@ -460,10 +460,10 @@
                 aboutParaTwo: "I have experience in developing games and mobile applications. Furthermore, I really like to test and work with different tools and frameworks.",
                 aboutParaThree: "I like building new stuff and work as a team, without a team we can't build something interesting.",
                 aboutImage: "https://github.com/FazelX.png",
-                skills: [{img: y.a, para: "Android"}, {img: s.a, para: "Flutter"}, {img: S.a, para: "Java"}, {
+                skills: [{img: y.a, para: "Android"}, {img: s.a, para: "Kotlin"}, {img: S.a, para: "Java"}, {
                     img: w.a,
-                    para: "Dart"
-                }, {img: E.a, para: "Git"}, {img: A.a, para: "Kotlin"}, {
+                    para: "Flutter"
+                }, {img: E.a, para: "Dart"}, {img: A.a, para: "Git"}, {
                     img: x.a,
                     para: "Python"
                 }, {img: C.a, para: "Spring Boot"}],

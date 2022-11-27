@@ -457,7 +457,7 @@
                     url: ""
                 }],
                 aboutParaOne: "My name is Fazel Heidari, I'm an Android developer. I love coding because it lets me develop and build things, can make people happy, and make their life easier.",
-                aboutParaTwo: "I have experience in developing games and mobile applications. Furthermore, I really like to test and work with different tools and frameworks.",
+                aboutParaTwo: "I have more than 4 years experience in developing mobile applications with Java and Kotlin. Furthermore, I really like to test and work with different tools and frameworks.",
                 aboutParaThree: "I like building new stuff and work as a team, without a team we can't build something interesting.",
                 aboutImage: "https://github.com/FazelX.png",
                 skills: [{img: y.a, para: "Android"}, {img: s.a, para: "Kotlin"}, {img: S.a, para: "Java"}, {

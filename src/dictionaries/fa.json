@@ -1,0 +1,44 @@
+{
+  "navigation": {
+    "about": "درباره من",
+    "skills": "مهارت‌ها",
+    "experience": "تجربیات",
+    "portfolio": "نمونه کارها",
+    "language": "FA"
+  },
+  "hero": {
+    "greeting": "سلام، من فاضل (راس) حیدری هستم",
+    "role": "Versatile Software Developer",
+    "tagline": "طراحی معماری‌های مقیاس‌پذیر، برنامه‌های کاربرپسند و راهکارهای مبتنی بر AI.",
+    "cta": "مشاهده نمونه کارها"
+  },
+  "about": {
+    "title": "درباره من",
+    "description": "Software engineer با بیش از ۶ سال تجربه انباشته. تخصص من در Next.js، Python (FastAPI)، Flutter و یکپارچه‌سازی AI است. در حال حاضر بر روی پروژه‌ها و وظایف مشخص و واضح تمرکز دارم."
+  },
+  "skills": {
+    "title": "Stack مهارت‌های من",
+    "levels": {
+      "junior": "Junior",
+      "mid": "Mid-Level"
+    },
+    "categories": {
+      "android": "Android",
+      "flutter": "Flutter",
+      "frontend": "Web Front-End",
+      "backend": "Back-End",
+      "data": "Python / Data",
+      "ai": "AI / ML",
+      "architecture": "Architecture & Core"
+    }
+  },
+  "experience": {
+    "title": "جدول زمانی تجربیات"
+  },
+  "portfolio": {
+    "title": "نمونه کارها",
+    "all": "همه",
+    "liveLink": "Live Demo",
+    "githubLink": "GitHub"
+  }
+}

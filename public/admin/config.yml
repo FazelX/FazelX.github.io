@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: FazelX/FazelX.github.io
+  branch: main
+
+i18n:
+  structure: multiple_folders
+  locales: [en, fa]
+  default_locale: en
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "src/data/portfolio_items"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    i18n: true
+    fields:
+      - {label: "Title", name: "title", widget: "string", i18n: true, required: false}
+      - {label: "Area/Category", name: "area", widget: "string", i18n: true}
+      - {label: "Highlight/Description", name: "highlight", widget: "text", i18n: true}
+      - {label: "Image", name: "image", widget: "image", required: false, i18n: false}
+      - {label: "Tech Stack", name: "tech_stack", widget: "list", required: false, i18n: false}
+      - {label: "Live Link", name: "live_link", widget: "string", required: false, i18n: false}
+      - {label: "GitHub Link", name: "github_link", widget: "string", required: false, i18n: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false, i18n: true}

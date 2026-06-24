@@ -12,6 +12,36 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
+  - name: "settings"
+    label: "Site Settings"
+    editor:
+      preview: false
+    files:
+      - label: "Global Settings"
+        name: "globals"
+        file: "src/data/settings/globals.json"
+        i18n: true
+        fields:
+          - {label: "Enable Bilingual Support", name: "enable_bilingual", widget: "boolean", default: true, i18n: false}
+          - {label: "Hero Greeting", name: "hero_greeting", widget: "string", i18n: true}
+          - {label: "Hero Role", name: "hero_role", widget: "string", i18n: true}
+          - {label: "Hero Tagline", name: "hero_tagline", widget: "string", i18n: true}
+          - {label: "About Text", name: "about_text", widget: "text", i18n: true}
+
+  - name: "experiences"
+    label: "Experiences"
+    folder: "src/data/experiences"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    i18n: true
+    fields:
+      - {label: "Role", name: "role", widget: "string", i18n: true}
+      - {label: "Company / Type", name: "company", widget: "string", i18n: true, required: false}
+      - {label: "Period", name: "period", widget: "string", i18n: true}
+      - {label: "Location", name: "location", widget: "string", i18n: true, required: false}
+      - {label: "Achievements", name: "achievements", widget: "list", i18n: true}
+      - {label: "Order", name: "order", widget: "number", value_type: "int", i18n: false}
+
   - name: "projects"
     label: "Projects"
     folder: "src/data/portfolio_items"
@@ -22,7 +52,25 @@ collections:
       - {label: "Title", name: "title", widget: "string", i18n: true, required: false}
       - {label: "Area/Category", name: "area", widget: "string", i18n: true}
       - {label: "Highlight/Description", name: "highlight", widget: "text", i18n: true}
-      - {label: "Image", name: "image", widget: "image", required: false, i18n: false}
+      - label: "Related Experience"
+        name: "experience"
+        widget: "relation"
+        collection: "experiences"
+        search_fields: ["role", "company"]
+        value_field: "{{slug}}"
+        display_fields: ["role"]
+        required: false
+        i18n: false
+      - {label: "Featured on Timeline", name: "featured_on_timeline", widget: "boolean", default: false, i18n: false}
+      - {label: "Cover Image", name: "image", widget: "image", required: false, i18n: false}
+      - label: "Media Gallery (Images & Videos)"
+        name: "media_gallery"
+        widget: "list"
+        required: false
+        i18n: false
+        fields:
+          - {label: "Media File", name: "media_file", widget: "file", required: true}
+          - {label: "Type", name: "type", widget: "select", options: ["image", "video"], default: "image"}
       - {label: "Tech Stack", name: "tech_stack", widget: "list", required: false, i18n: false}
       - {label: "Live Link", name: "live_link", widget: "string", required: false, i18n: false}
       - {label: "GitHub Link", name: "github_link", widget: "string", required: false, i18n: false}

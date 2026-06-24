@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 
-export function AboutSkillsSection({ dict }: { dict: Record<string, any> }) {
+export function AboutSkillsSection({ dict, globals }: { dict: Record<string, any>, globals?: Record<string, any> }) {
+  const aboutText = globals?.about_text || dict.about.description;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -43,8 +45,8 @@ export function AboutSkillsSection({ dict }: { dict: Record<string, any> }) {
                 {dict.about.title}
               </h2>
               <div className="glass-panel p-8 rounded-2xl">
-                <p className="text-lg leading-relaxed text-text-muted">
-                  {dict.about.description}
+                <p className="text-lg leading-relaxed text-text-muted whitespace-pre-line">
+                  {aboutText}
                 </p>
               </div>
             </motion.div>

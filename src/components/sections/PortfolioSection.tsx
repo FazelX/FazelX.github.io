@@ -3,9 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Code } from "lucide-react";
+import { PortfolioModal } from "../PortfolioModal";
 
 export function PortfolioSection({ dict, projects }: { dict: Record<string, any>; projects: Record<string, any>[] }) {
   const [filter, setFilter] = useState("All");
+  const [selectedProject, setSelectedProject] = useState<any>(null);
 
   // Extract unique areas/categories
   const categories = ["All", ...Array.from(new Set(projects.map(p => p.area)))];
@@ -51,13 +53,14 @@ export function PortfolioSection({ dict, projects }: { dict: Record<string, any>
           <AnimatePresence>
             {filteredProjects.map((project, idx) => (
               <motion.div
-                key={project.id || idx}
+                key={project.slug || idx}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="glass-panel p-6 rounded-2xl hover:border-brand-neon/30 group flex flex-col h-full"
+                onClick={() => setSelectedProject(project)}
+                className="glass-panel p-6 rounded-2xl hover:border-brand-neon/30 group flex flex-col h-full cursor-pointer"
               >
                 <div className="mb-4">
                   <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-brand-neon/10 text-brand-neon border border-brand-neon/20 mb-3">
@@ -102,6 +105,15 @@ export function PortfolioSection({ dict, projects }: { dict: Record<string, any>
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Modal */}
+        {selectedProject && (
+          <PortfolioModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+            dict={dict}
+          />
+        )}
       </div>
     </section>
   );

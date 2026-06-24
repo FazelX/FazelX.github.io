@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Globe } from "lucide-react";
 
-export function Navbar({ dict, lang }: { dict: Record<string, any>; lang: string }) {
+export function Navbar({ dict, lang, enableBilingual = true }: { dict: Record<string, any>; lang: string; enableBilingual?: boolean }) {
   const pathname = usePathname();
   const toggleLang = lang === "en" ? "fa" : "en";
 
@@ -43,15 +43,17 @@ export function Navbar({ dict, lang }: { dict: Record<string, any>; lang: string
             </div>
           </div>
 
-          <div className="flex items-center">
-            <Link
-              href={togglePath}
-              className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-white/5 transition-colors"
-            >
-              <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium uppercase">{toggleLang}</span>
-            </Link>
-          </div>
+          {enableBilingual && (
+            <div className="flex items-center">
+              <Link
+                href={togglePath}
+                className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-white/5 transition-colors"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="text-sm font-medium uppercase">{toggleLang}</span>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </motion.nav>

@@ -2,7 +2,11 @@
 
 import { motion } from "framer-motion";
 
-export function HeroSection({ dict }: { dict: Record<string, any> }) {
+export function HeroSection({ dict, globals }: { dict: Record<string, any>, globals?: Record<string, any> }) {
+  const greeting = globals?.hero_greeting || dict.hero.greeting;
+  const role = globals?.hero_role || dict.hero.role;
+  const tagline = globals?.hero_tagline || dict.hero.tagline;
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
       {/* Background glow effects */}
@@ -15,13 +19,13 @@ export function HeroSection({ dict }: { dict: Record<string, any> }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-            {dict.hero.greeting}
+            {greeting}
           </h1>
           <h2 className="text-2xl md:text-4xl text-brand-neon font-medium mb-8 neon-text">
-            {dict.hero.role}
+            {role}
           </h2>
           <p className="text-xl md:text-2xl text-text-muted mb-12 max-w-2xl mx-auto leading-relaxed">
-            {dict.hero.tagline}
+            {tagline}
           </p>
 
           <motion.a
